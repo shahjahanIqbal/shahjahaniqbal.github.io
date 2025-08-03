@@ -1,0 +1,226 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: fit;
+
+}
+
+body{
+    font-family: "Source Code Pro", monospace;
+    margin: 1em 2em 0 2em;
+    height: 100vh;
+    width: 100%;
+    background-color: #260149 ;
+    color: #FF0088;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding:1em 3em ;
+    padding:0;
+
+
+}
+a {
+    text-decoration:  none;
+    color: inherit;
+}
+.navAndSong{
+    display: flex;
+    height: 20%;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+.whysong{
+    font-size: 8pt;
+}
+.nav-bar {
+    display:flex;
+    justify-content: center;
+
+    
+}
+.nav-bar ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  /* Make items appear side by side */
+    display: flex;
+    gap: 20px; /* spacing between items */
+    justify-items: center;
+    align-items: flex-start;
+    
+}
+.nav-bar li {
+    padding: 0.5em;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+
+}
+
+.songbox{
+    display: flex;
+    justify-content: right;
+    text-align: right;
+    align-items: flex-start;
+}
+.home-hero{
+    font-family: "Source Code Pro", monospace;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    font-size: 100pt;
+  
+
+}
+.mainContainer {
+    padding:1em 2em 0 2em;
+    margin: 0;
+    height: 100%;
+    overflow: auto;
+    position: relative;
+  
+}
+.Typewriter__cursor {
+    display: inline-block;
+    width: 50;
+    background-color: #fbb34d;
+    height: 1.3em;
+    
+}
+
+#whatami {
+    color: #fbb34d;
+    font-size: 60pt;
+
+}
+
+.nav-bar li:hover {
+    background-color: #d62d5b;
+    color: #fbb34d;
+    font-weight: bold;
+    transform: scale(1.05);
+}
+
+
+.songbox p {
+    margin:0;
+    padding:0.5em 0 0 0;
+}
+
+/* ABOUT PAGE */
+
+.AboutHero {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 80%;
+    overflow: clip;
+}
+
+.terminal {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    flex: 1;
+    padding:  2rem ; /* only a small gap to the right */
+    margin: 0 5% 0 0;
+    background-color: #1c0135a6;
+    border-radius: 2%;
+    height: 80vh;
+    overflow: hidden;
+    min-height: 0;
+    border: 2px  solid #1c0135e1;
+    padding-bottom: 0.5rem;
+
+}
+#term{
+    background-color: #26014900;
+    border: none;
+    border-radius: 0;
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    height:100%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+
+}
+
+
+.prompt {
+        color: #fbb34d;
+
+}
+
+
+.ascii-art {
+    text-align: center;
+  font-family: 'Fira Code', monospace;
+  color:#fbb34d;
+  font-size: 0.75rem;
+  font-weight: bold;
+  white-space: pre-wrap; /* allow wrapping instead of scrollbar */
+  word-break: break-word;
+  overflow-x: fit;
+
+}
+
+.terminal textarea {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  resize: none;
+  outline: none;
+  align-items: flex-start;
+  height: 1.2em;
+  overflow: hidden ;
+}
+
+
+.visually-hidden  {
+    display: none;
+}
+.terminal-hidden{
+    display:none;
+}
+.cmd-cursor-line{
+    display:none;
+}
+.Image2Uni {
+    font-size: 0.2rem;
+    color:#fbb34d;
+     /* give the image more space */
+    padding-left: 0.5rem; /* minimal padding */
+    height: 80%;
+    width:80vh;
+    overflow: hidden;
+  
+}
+.terminal-font{
+    display:none;
+}
+
+.cmd-clipboard{
+    width: 100%;
+}
+
+.portrait-art{
+    margin:0;
+    width:80vh;
+    height: 80vh;
+    overflow: clip;
+    max-width: 100%;     
+}
