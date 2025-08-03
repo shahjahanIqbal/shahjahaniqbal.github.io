@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  
+  </head>
+
+  <body class="mainContainer">
+    <div class="navAndSong">
+      {% include "nav.njk" %}
+    </div>
+
+    <main>
+      {{ content | safe }}
+    </main>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
+<script src="https://unpkg.com/figlet/lib/figlet.js"></script>
+    <script src="/typewriter.js"></script>
+    <script src="/scripts/script1.js"></script>
+        <script src="/scripts/about.js"></script>
+
+  </body>
+</html>
