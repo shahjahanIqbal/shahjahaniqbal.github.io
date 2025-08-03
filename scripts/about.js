@@ -64,7 +64,7 @@ const socials = `
         },
     };
     const term = $('#term').terminal(commands, {
-            greetings: "Hello mortal.. I sense that you seek knowledge about me. \nEnter [[;#fbb34d;]help] to know the list of commands. \nBut be warned.. there are plenty more spells hidden from your sights. \nThe legends call them the eggs of easter. You must seek them out yourself.",
+            greetings: "Hello mortal.. I sense that you seek knowledge about me. \nEnter [[;#fbb34d;]help] to know the list of commands. \nBut be warned.. there are plenty more spells hidden from your sights. \nThe legends call them the eggs of easter. \nYou must seek them out yourself.",
             keepWords: true,
             prompt: '>>>',
     });
