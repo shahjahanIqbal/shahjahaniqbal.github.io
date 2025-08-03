@@ -55,7 +55,7 @@ window.addEventListener('DOMContentLoaded', () => {
         '&lt;/coder\&gt; <img src = "../images/computer.png" width="100px" style="display:inline; vertical-align: middle; margin:-0.25em;margin-right:0.2em;">',
         'woke up like this <img src = "../images/bug.png" width="150px" style="display:inline; vertical-align: middle; margin:-0.25em;margin-right:0.2em;">',
         'doesn\'t make typos :P',
-        'left his site half done ¬_¬'
+        'won\'t finish this site ¬_¬'
     ];
 
     function mainAnim() {
