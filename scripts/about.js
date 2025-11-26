@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById("ascii-container");
-    const files = ["Ascii1.txt", "Ascii2.txt", "Ascii3.txt", "Ascii5.txt"];
+    #const files = ["Ascii1.txt", "Ascii2.txt", "Ascii3.txt", "Ascii5.txt"];
     let index = 0;
 
 
