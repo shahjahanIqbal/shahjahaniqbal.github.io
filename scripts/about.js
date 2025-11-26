@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-    function loadascii(){
+    /*function loadascii(){
         fetch(`/ascii/${files[index]}`)
         .then(res=>res.text())
         .then(text=>{
@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
     loadascii();
-    setInterval(loadascii, 3000);
+    setInterval(loadascii, 3000);*/
 
 
     /* Terminal */
