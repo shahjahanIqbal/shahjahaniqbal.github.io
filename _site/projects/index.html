@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Projects</title>
+    <meta name="description" content="Projects by Shahjahan Iqbal">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  
+  </head>
+
+  <body class="mainContainer">
+    <div class="navAndSong">
+      <nav class="nav-bar">
+  <ul> 
+    <a href="/"><li>home</li></a>
+    <a href="/about/"><li>about me</li></a>   
+    <a href="/projects/"><li>projects</li></a>
+    <a href="/blog/"><li>blog</li></a>
+    <a href="/resources/"><li>resources</li></a>
+    <a href="/bookshelf/"><li>my bookshelf</li></a>
+  </ul>
+</nav>
+
+<div id="song" class="songbox">
+  <p id="song-lyric" style="font-style:italic;">"loading..."</p>
+  <p id="song-credit" style="margin:0;padding:0.2em 0 0;">—<span id="song-artist"></span></p>
+  <span class="whysong">There's always music on my mind :)</span>
+</div>
+
+<script>
+/*
+  MUSIC ON MY MIND — random song each page load.
+  Add your own entries to the songs array below.
+  Format: { lyric: "...", artist: "...", song: "..." }
+*/
+const songs = [
+  { lyric: "I must be Invisible, no one knows me",         artist: "Eric Clapton",  song: "Wonderful Tonight"    },
+  { lyric: "Is there anybody out there?",                  artist: "Pink Floyd",    song: "Comfortably Numb"     },
+  { lyric: "Hey hey, mama, said the way you move",         artist: "Led Zeppelin",  song: "Black Dog"            },
+  { lyric: "Excuse me while I kiss the sky",               artist: "Jimi Hendrix",  song: "Purple Haze"          },
+  { lyric: "The music plays on and on till morning comes", artist: "Dire Straits",  song: "Romeo and Juliet"     },
+  { lyric: "We're just two lost souls swimming in a fish bowl", artist: "Pink Floyd", song: "Wish You Were Here" },
+  { lyric: "Time, he's waiting in the wings",              artist: "David Bowie",   song: "Time"                 },
+  { lyric: "Lay, lady, lay, lay across my big brass bed",  artist: "Bob Dylan",     song: "Lay Lady Lay"         },
+  { lyric: "There's a lady who's sure all that glitters is gold", artist: "Led Zeppelin", song: "Stairway to Heaven" },
+  /* ADD YOUR OWN BELOW */
+];
+
+(function() {
+  const pick = songs[Math.floor(Math.random() * songs.length)];
+  document.getElementById('song-lyric').textContent  = '"' + pick.lyric + '"';
+  document.getElementById('song-artist').textContent = pick.artist + ' \u2014 ' + pick.song;
+})();
+</script>
+
+    </div>
+
+    <main>
+      
+<div class="projects-page">
+  <div class="dos-window">
+    <div class="dos-titlebar">
+      <span class="dos-title">C:\SHAHJAHAN\PROJECTS&gt;_</span>
+      <div class="dos-controls">
+        <span class="dos-btn">■</span>
+        <span class="dos-btn">▲</span>
+        <span class="dos-btn dos-close">✕</span>
+      </div>
+    </div>
+    <div class="dos-menubar">
+      <span class="dos-menu-item active" onclick="filterProjects('all', this)">[ ALL ]</span>
+      <span class="dos-menu-item" onclick="filterProjects('physics', this)">[ PHYSICS ]</span>
+      <span class="dos-menu-item" onclick="filterProjects('code', this)">[ CODE ]</span>
+      <span class="dos-menu-item" onclick="filterProjects('misc', this)">[ MISC ]</span>
+    </div>
+    <div class="dos-body">
+      <div class="dos-prompt-line">&gt; DIR /S /B</div>
+      <div class="dos-sys-text">
+        Volume in drive C is SHAH-DRIVE &nbsp;|&nbsp; Serial No. 1981-RETRO<br>
+        Directory of C:\SHAHJAHAN\PROJECTS
+      </div>
+
+      <div class="projects-grid" id="projects-grid">
+
+        <!--
+          ══════════════════════════════════════════════
+          ADD YOUR PROJECTS BELOW — copy a card block
+          and fill in your details.
+          data-tag options: "physics" | "code" | "misc"
+          ══════════════════════════════════════════════
+        -->
+
+        <div class="project-card" data-tag="physics" onclick="openProject(this)">
+          <div class="card-header">
+            <span class="card-icon">[ DIR ]</span>
+            <span class="card-tag">PHYSICS</span>
+          </div>
+          <div class="card-filename">&gt; PROJECT_01.exe</div>
+          <div class="card-title">Your Project Title Here</div>
+          <div class="card-desc">Short description of what this project does. Replace this with your own abstract or summary.</div>
+          <div class="card-date-row">DATE: 2024-01-01</div>
+          <div class="card-stack">STACK: Python · XSPEC · HEASoft</div>
+          <div class="card-links">
+            <a href="#" target="_blank">[CODE]</a>
+            <a href="#" target="_blank">[PAPER]</a>
+          </div>
+        </div>
+
+        <div class="project-card" data-tag="code" onclick="openProject(this)">
+          <div class="card-header">
+            <span class="card-icon">[ DIR ]</span>
+            <span class="card-tag">CODE</span>
+          </div>
+          <div class="card-filename">&gt; PROJECT_02.exe</div>
+          <div class="card-title">Your Project Title Here</div>
+          <div class="card-desc">Short description of what this project does. Replace this with your own abstract or summary.</div>
+          <div class="card-date-row">DATE: 2024-06-15</div>
+          <div class="card-stack">STACK: JavaScript · Node · Express</div>
+          <div class="card-links">
+            <a href="#" target="_blank">[CODE]</a>
+            <a href="#" target="_blank">[DEMO]</a>
+          </div>
+        </div>
+
+        <div class="project-card" data-tag="misc" onclick="openProject(this)">
+          <div class="card-header">
+            <span class="card-icon">[ DIR ]</span>
+            <span class="card-tag">MISC</span>
+          </div>
+          <div class="card-filename">&gt; PROJECT_03.exe</div>
+          <div class="card-title">Your Project Title Here</div>
+          <div class="card-desc">Short description of what this project does. Replace this with your own abstract or summary.</div>
+          <div class="card-date-row">DATE: 2025-03-10</div>
+          <div class="card-stack">STACK: Arduino · C++</div>
+          <div class="card-links">
+            <a href="#" target="_blank">[LINK]</a>
+          </div>
+        </div>
+
+      </div><!-- /projects-grid -->
+
+      <div class="dos-status-bar">
+        <span id="filter-status">FILTER: ALL</span>
+        &nbsp;|&nbsp;
+        <span id="shown-count">3 FILE(S)</span>
+        &nbsp;|&nbsp; CLICK A FILE TO EXECUTE
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Expanded Project Modal -->
+<div class="project-modal-overlay" id="project-modal" onclick="closeModal(event)">
+  <div class="project-modal-window">
+    <div class="dos-titlebar">
+      <span class="dos-title" id="modal-title">C:\PROJECT&gt;_</span>
+      <div class="dos-controls">
+        <span class="dos-btn dos-close" onclick="closeProject()">✕ CLOSE</span>
+      </div>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<style>
+.projects-page {
+  padding: 0 0 2em;
+}
+.dos-window {
+  border: 2px solid #FF0088;
+  box-shadow: 5px 5px 0 #d62d5b55;
+  background: #0d0020;
+  max-width: 1100px;
+  margin: 0 auto;
+  font-family: "Source Code Pro", monospace;
+}
+.dos-titlebar {
+  background: #FF0088;
+  color: #0d0020;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25em 0.7em;
+  font-weight: bold;
+  font-size: 0.82em;
+  letter-spacing: 0.06em;
+}
+.dos-controls { display: flex; gap: 0.5em; }
+.dos-btn {
+  cursor: pointer;
+  padding: 0 0.35em;
+  background: #0d0020;
+  color: #FF0088;
+  font-size: 0.8em;
+  transition: background 0.1s;
+}
+.dos-btn:hover { background: #fbb34d; color: #0d0020; }
+.dos-menubar {
+  background: #1c0135;
+  border-bottom: 1px solid #FF008866;
+  padding: 0.4em 1.2em;
+  display: flex;
+  gap: 1.5em;
+  flex-wrap: wrap;
+}
+.dos-menu-item {
+  color: #fbb34d;
+  cursor: pointer;
+  font-size: 0.82em;
+  letter-spacing: 0.1em;
+  transition: all 0.1s;
+  padding: 0.1em 0.2em;
+}
+.dos-menu-item:hover, .dos-menu-item.active {
+  background: #fbb34d;
+  color: #0d0020;
+}
+.dos-body { padding: 1em 1.5em 0.8em; }
+.dos-prompt-line { color: #fbb34d; font-size: 0.78em; margin-bottom: 0.3em; }
+.dos-sys-text { color: #555; font-size: 0.72em; display: block; margin-bottom: 1.2em; line-height: 1.6; }
+
+/* Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1.2em;
+  margin-bottom: 1em;
+}
+.project-card {
+  border: 1px solid #FF008877;
+  background: #100028;
+  padding: 0.9em 1em;
+  cursor: pointer;
+  transition: all 0.18s;
+  position: relative;
+}
+.project-card::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; right: -4px;
+  width: 100%; height: 100%;
+  border: 1px solid #FF008822;
+  pointer-events: none;
+}
+.project-card:hover {
+  background: #1c0135;
+  border-color: #fbb34d;
+  transform: translate(-3px, -3px);
+  box-shadow: 5px 5px 0 #fbb34d33;
+}
+.project-card.hidden { display: none; }
+
+.card-header { display: flex; justify-content: space-between; margin-bottom: 0.5em; align-items: center; }
+.card-icon { color: #444; font-size: 0.72em; }
+.card-tag {
+  font-size: 0.65em;
+  background: #FF0088;
+  color: #0d0020;
+  padding: 0.1em 0.45em;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+}
+.card-tag[data-v="physics"] { background: #d62d5b; }
+.card-tag[data-v="code"] { background: #FF0088; }
+.card-tag[data-v="misc"] { background: #7b00b4; }
+
+.card-filename { color: #fbb34d; font-size: 0.75em; margin-bottom: 0.35em; }
+.card-title { color: #FF0088; font-size: 0.95em; font-weight: bold; margin-bottom: 0.4em; }
+.card-desc { color: #bbb; font-size: 0.76em; line-height: 1.55; margin-bottom: 0.55em; }
+.card-date-row { color: #555; font-size: 0.68em; margin-bottom: 0.2em; }
+.card-stack { color: #777; font-size: 0.68em; margin-bottom: 0.55em; }
+.card-links { font-size: 0.75em; display: flex; gap: 0.6em; }
+.card-links a { color: #fbb34d; text-decoration: none; }
+.card-links a:hover { color: #FF0088; }
+
+.dos-status-bar {
+  border-top: 1px solid #FF008833;
+  padding: 0.45em 0 0.1em;
+  font-size: 0.7em;
+  color: #555;
+}
+
+/* Modal */
+.project-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #0d002099;
+  backdrop-filter: blur(2px);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+.project-modal-overlay.open { display: flex; }
+.project-modal-window {
+  border: 2px solid #fbb34d;
+  background: #0d0020;
+  width: min(580px, 92vw);
+  box-shadow: 8px 8px 0 #fbb34d22;
+  font-family: "Source Code Pro", monospace;
+}
+.modal-body {
+  padding: 1.2em 1.5em 1.5em;
+  color: #ccc;
+  font-size: 0.82em;
+  line-height: 1.75;
+  max-height: 65vh;
+  overflow-y: auto;
+}
+</style>
+
+<script>
+function filterProjects(tag, el) {
+  document.querySelectorAll('.project-card').forEach(c => {
+    c.classList.toggle('hidden', tag !== 'all' && c.dataset.tag !== tag);
+  });
+  document.querySelectorAll('.dos-menu-item').forEach(m => m.classList.remove('active'));
+  el.classList.add('active');
+  const shown = document.querySelectorAll('.project-card:not(.hidden)').length;
+  document.getElementById('filter-status').textContent = `FILTER: ${tag.toUpperCase()}`;
+  document.getElementById('shown-count').textContent = `${shown} FILE(S)`;
+}
+
+function openProject(card) {
+  const title   = card.querySelector('.card-title').textContent;
+  const desc    = card.querySelector('.card-desc').textContent;
+  const stack   = card.querySelector('.card-stack').textContent;
+  const date    = card.querySelector('.card-date-row').textContent;
+  const links   = card.querySelector('.card-links').innerHTML;
+  const tag     = card.dataset.tag.toUpperCase();
+
+  document.getElementById('modal-title').textContent =
+    `C:\\PROJECTS\\${title.toUpperCase().replace(/ /g,'_').slice(0,28)}>_`;
+
+  document.getElementById('modal-body').innerHTML = `
+    <div style="color:#fbb34d;margin-bottom:1em;font-size:0.9em;">&gt; EXECUTING ${title.toUpperCase().replace(/ /g,'_')}.exe...<br>&gt; LOAD SUCCESSFUL ✓</div>
+    <div style="color:#FF0088;font-size:1.15em;font-weight:bold;margin-bottom:0.5em;">${title}</div>
+    <div style="color:#888;font-size:0.82em;margin-bottom:0.3em;">[${tag}] &nbsp; ${date}</div>
+    <div style="border-top:1px solid #FF008833;padding-top:0.8em;margin:0.8em 0;">${desc}</div>
+    <div style="color:#666;font-size:0.8em;margin-bottom:1em;">${stack}</div>
+    <div style="display:flex;gap:1em;font-size:0.88em;">${links}</div>
+  `;
+  document.getElementById('project-modal').classList.add('open');
+}
+function closeProject() {
+  document.getElementById('project-modal').classList.remove('open');
+}
+function closeModal(e) {
+  if (e.target.id === 'project-modal') closeProject();
+}
+document.addEventListener('DOMContentLoaded', () => {
+  const n = document.querySelectorAll('.project-card').length;
+  document.getElementById('shown-count').textContent = `${n} FILE(S)`;
+});
+</script>
+
+    </main>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
+<script src="https://unpkg.com/figlet/lib/figlet.js"></script>
+    <script src="/typewriter.js"></script>
+    <script src="/scripts/script1.js"></script>
+        <script src="/scripts/about.js"></script>
+
+  </body>
+</html>

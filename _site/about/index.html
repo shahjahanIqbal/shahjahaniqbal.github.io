@@ -20,6 +20,7 @@
   <ul> 
     <a href="/"><li>home</li></a>
     <a href="/about/"><li>about me</li></a>   
+    <a href="/projects/"><li>projects</li></a>
     <a href="/blog/"><li>blog</li></a>
     <a href="/resources/"><li>resources</li></a>
     <a href="/bookshelf/"><li>my bookshelf</li></a>
@@ -27,20 +28,44 @@
 </nav>
 
 <div id="song" class="songbox">
-  <p>"I must be Invisible, no one knows me" <br />-Eric Clapton 
-    <br />
-    <span class="whysong">There's always music on my mind :)</span>
-  </p>
+  <p id="song-lyric" style="font-style:italic;">"loading..."</p>
+  <p id="song-credit" style="margin:0;padding:0.2em 0 0;">—<span id="song-artist"></span></p>
+  <span class="whysong">There's always music on my mind :)</span>
 </div>
+
+<script>
+/*
+  MUSIC ON MY MIND — random song each page load.
+  Add your own entries to the songs array below.
+  Format: { lyric: "...", artist: "...", song: "..." }
+*/
+const songs = [
+  { lyric: "I must be Invisible, no one knows me",         artist: "Eric Clapton",  song: "Wonderful Tonight"    },
+  { lyric: "Is there anybody out there?",                  artist: "Pink Floyd",    song: "Comfortably Numb"     },
+  { lyric: "Hey hey, mama, said the way you move",         artist: "Led Zeppelin",  song: "Black Dog"            },
+  { lyric: "Excuse me while I kiss the sky",               artist: "Jimi Hendrix",  song: "Purple Haze"          },
+  { lyric: "The music plays on and on till morning comes", artist: "Dire Straits",  song: "Romeo and Juliet"     },
+  { lyric: "We're just two lost souls swimming in a fish bowl", artist: "Pink Floyd", song: "Wish You Were Here" },
+  { lyric: "Time, he's waiting in the wings",              artist: "David Bowie",   song: "Time"                 },
+  { lyric: "Lay, lady, lay, lay across my big brass bed",  artist: "Bob Dylan",     song: "Lay Lady Lay"         },
+  { lyric: "There's a lady who's sure all that glitters is gold", artist: "Led Zeppelin", song: "Stairway to Heaven" },
+  /* ADD YOUR OWN BELOW */
+];
+
+(function() {
+  const pick = songs[Math.floor(Math.random() * songs.length)];
+  document.getElementById('song-lyric').textContent  = '"' + pick.lyric + '"';
+  document.getElementById('song-artist').textContent = pick.artist + ' \u2014 ' + pick.song;
+})();
+</script>
 
     </div>
 
     <main>
       
-<div class="mainContainerAbout">
-    <div class="AboutHero">
-        <div class = "terminal">
-                    <pre class = "ascii-art">                                                                                                                                                                                                                                                                                                                                                             
+<div class="AboutHero">
+    <div class="terminal">
+        <pre class="ascii-art">
       _             _        _         _                       _         _             _ 
      | |           | |      (_)       | |                     (_)       | |           | |
  ___ | |__    __ _ | |__     _   __ _ | |__    __ _  _ __      _   __ _ | |__    __ _ | |
@@ -50,64 +75,11 @@
                            _/ |                                      | |                 
                           |__/                                       |_|                 
 </pre>
-<div id = "term"></div> 
-            
-        </div>
-        <div class = "Image2Uni">
-                <!--<pre class="portrait-art">                                             .    .┈╌┪▉▇▅%╯╷                  
-                                      ┆╦╖╸╀╳▐#┅╮┪#:╲▌█▋╩▋██▊╋▅┆.:╹            
-                                    .╏╦┮▉╇┆╋█▉▓█████▋╯▉█╬▓▓██▀█▉▅┻▐▋▅▎.       
-                                .┅╩@▍┇┆╮╹▄╳%╠▒▇▊┻▌╋╋██▋██▃▊██▇█████╋██▀       
-                              ╯╋╋▍╦▏▆▅┅▋▉▉▓▀▒╋▅███▌╹┇██#█┺┽█┪█╋▋██████▊┆┈     
-                             ┻▍▋▊███▆▋┴┴▃┇┅┈┇▇█▅▀┆▉┻┈╇▎┪@╩╌╳+█▎┇▅▃▒╀▆▆█▉▉┬    
-                           .▐╋┲:╷╠▅╬╠┺╠╇▒▊▊▊█▉+@╋┇+▆:+╲┮┻╬╯╲+▒┅+┽╹╏╖╏┴▋██▆+   
-                           ╳▉█▆╋╇╋┪╈╋▋▆▅╋▋▊▊╋╮╳▌@▌+╋▃╸┙╖╳┺╦┙╏▎╖┇▃╹┴┙┇+┙▆▋██▎  
-                         #███▐┮▏▐▊▎╖╯┆╦▅▉█╳╸┻┆╷┄╯#┲┙╋╸╹┆╦┲▃┙┴┙┙┙┴╖┴┙+╲╲╲╏██▇┽#
-                        ┽▉▅▌▆▀█▋▒╠▄▋▅▅▅╬╌┄╷┆╌╮╲:::┙╌╳╸╸╸┆╲╲╖╮╖┅┆┬┬╯▏┆┅┆▏┆╳█▒▓█
-                        ┬╋▋▀▃▆▋@▒▋▌╠┽╖╮┆+╩╇▒╋╋▍┮▏:.╷:╸╷╌┄╌╸╸╌╌╌╮╌╌╌╌▏╮╮╌╌▒▓▋▀▍
-                        ▃▒#▃╠▅╇▄┲╌┄┄┙▊███████████████▋┮╷::┄╌┆╮┄╌╸┈┈╌╌╌╌┄┆╏▇█▄╀
-                        ▃╋▒▅▒╋▍╩┙╸┆╠█████████████████████▉██████▉▊╋┇╌┄╌╹┅┆┅┴┬╲
-                        ╯╋▄╋@╀╦┥┇╖╹▊██████████████████████████████████▀┅╌╮╸┆▒▉
-                         ┲╋╋▄#%┴┅╯┥█████████████████████████████████████╲╮╮╮╈┪
-                         .╋╋▄╠┲╖┆┆▊█████████████████████████████████████▒┄╮╸╏▌
-                         .╋▌▄┽┴┆╳███████████████████████████████████████▆╷╌╸╲▆
-                         ╌▅╋▍┽┅╋████████████████████████████████████████▀╷╌┆┇╮
-                        .┥▊╏╠┇▐██████▉╋█████████████████████████████████╬╌╮╯╮ 
-                        ┇╋█▊┆┇████▄╋▆╋╌┈:.╦▓████████████████████████████╯╸┆╌  
-                       .▐▉█▓╸▉██████████▊┻┄...┄▄▉██████████████████████▉╮▏.   
-                       ▃▋█▆╩╇██████▉▓▆╋▄┪╠▒▊█▊╏....┺▎▊████████████▉▓▆██╬╌     
-                       ▒▌█▅╮█████████▉╋▍╷┅┴█▅▒╋██▍┈╮▊████@┆:.......::┈▀╏      
-                       ▀█▅┇┮█████████████████▉▇█████████▓▒┽▃╬┻╬▋██████▋.      
-                       ▐█▅╌╏███████████████████████████▐▒▀▒█▇#▋▄█▊╖▆██▏       
-                       ┈█▅:┈███████████████████████████╋█████▉▋▒▒╋╇▉█▋:       
-                        .+┈.▊██████████████████████████▅█████████████%        
-                         ┺╌:╌▇█████████████████████████▅█████████████╖        
-                        :▏┄:.╷▌██████████████▇█████████▐█████████████┄        
-                        :┈::╷.:╋████████████▆██████████▓▒████████████.        
-                        +╮┄┆..::▒██████████████╋▊██████▆╩▉██████████▍.        
-                        ╌┬:::.:::▊███┪::::::╷┈┮▅████▋▅▓███████████▉+╲.        
-                        .┆..:::::┆▇╠:::::::::::::::╷:╷╌┆╲╹┮╠▆███▉┇╌┆┆         
-                       ▆+┄::::╷:::┆:::::::::::::::.::╷╷╌╌╮╸╸╸▋▉╀┄╯╲┬          
-                        ┇╮╌╷╷╷╷::╷╷::╷:╷╋▅▆█████████▒╳╦╌╸╸╸╸▏┇┄╌╯┬┆:          
-                      ╯▉█▋┄┈┈╮┄┈╷┈┈::╷::╏╬┅╷:::::╷╮╹┪+╸╸╸┆┆╖╯┈┄╮╌╮            
-              .╠██▒████████╋╷╷┈┆╷╌┈┈┄╷:::╷::::::::╷┄╸┆┆┆▏▏╲╮┄┈┈▏╷             
-         .╲╋▌█▉████▅████████▉┅┈┈╷╷╷┈▏┈╷╷::::╷╷┈╷╷╷┈╌╮╸┆┆▏▏╌┈┈┈╯.              
-   ╌▅▋╋██████████▋██▊█████████▅╦╌┈╷┈┈╷┈┈::╷:╷╷╷╷┈╷┈┄╌╸╸╸┆╮┄┆┅╷                
-████╋████████▉████▋██▀█████████▇▅╦┄:╷╌╌┈╷╷:╷╷┈┈┈┈┄╌╌╮╸╮╌┄┈▎:                  
-███╋██████████▉████▅▀▉╋█████████▓▀▒┅╷╷╷╷┈╷╷┈┄┄╌╌╮╸╸╸╸╌╌╌┄╌┆▅┥.                
-██┲█████████████████▊╋▆▒▓████████▊▊▆▄┄:╷╷┄╮┈┈┄╌╌╮╮╮╮╮╮┄╮╹╋▄┇███╠:             
-█┽███████████████████▉▀▋▆╋▉███████▀▇▓▀╀┈╷╷╷╷╷┈┈┄┄┄┄┈┈╸╦╦╋▆┴┬╳▇████▋@┬:        
-@▆████████████████████▊▇▓▓▊▒▆█████▆▓▉▇▓▆▅┽╯╌┈╷┈╷┈┈╌╏╠╳┲╋▆▒+▃╠▆┽╋██████▋▒┴:╌╦┅ 
-▌███████████████████████▓▇▇▓▓▀╋▉██▇▆▇▉▇▓▓▓▓▓▊▆▒╈▍▐▌╋▎┥▅▆▌▍╩╀╇▋▆%#@▌███▉▀████▐█
-██████████████████████████▉▇▉▓▊▆▅▐▉▓▓▇▓▓▇▇▇▓▊╋▒▅▅▌#┲@▀▀▒▒▒╋@▄▐▇▒╋╋╋╬▉█▆▋▇▇████
-██████████████████████████▉▇▇▓█▓▊▆▆▌▌▓▓▇▉▉▓▋▒▅▅▐╋┇╠▋▀▅╋▐▅▐▒╋▄▌▆▊╋▒▒╋╋▅▋╇╠▌▓███
-██████████████████▉█████████▉▊▆▒▇▇▆▀▀▅╋▊▓▅▅▋▋▅▐╠▍▅▆▀▒▒▅▅▅▅▅▒╋▒▀▆▋▒▒▒▒▅▆╋╩@┺▉██
-████████████▉█████▉▉████████▉▉▉▉▓▄▒▉▊▅▅▐▋▀▀▀▋╋▒▄▋▆▀▒▒▅▅▅▅▅▅▐▒▒▋▀▋▐▌▒▐▅▀▇@┺╋╬▉█
-</pre>-->
-                <pre class="portrait-art" id = "ascii-container"></pre>
-        </div>
+        <div id="term"></div>
     </div>
-
+    <div class="Image2Uni">
+        <pre class="portrait-art" id="ascii-container"></pre>
+    </div>
 </div>
 
     </main>

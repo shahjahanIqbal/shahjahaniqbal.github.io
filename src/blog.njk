@@ -1,0 +1,375 @@
+---
+layout: layout.njk
+title: Blog
+description: Thoughts, notes and ramblings by Shahjahan Iqbal
+---
+
+<div class="blog-page">
+
+  <!-- Blog header -->
+  <div class="blog-header">
+    <div class="blog-header-label">&gt;&gt; /dev/thoughts &nbsp;—&nbsp; unsolicited opinions since ~2023</div>
+  </div>
+
+  <!-- Two-column layout: post list + sidebar -->
+  <div class="blog-layout">
+
+    <!-- Post list -->
+    <main class="blog-main">
+
+      <!--
+        ══════════════════════════════════════
+        ADD YOUR BLOG POSTS BELOW.
+        Copy a <article class="post-card"> block
+        and fill in your details.
+        ══════════════════════════════════════
+      -->
+
+      <article class="post-card" onclick="window.location='/blog/your-post-slug/'">
+        <div class="post-meta-row">
+          <span class="post-tag">PHYSICS</span>
+          <span class="post-date">2025-11-12</span>
+          <span class="post-read">~5 min read</span>
+        </div>
+        <h2 class="post-title">Your Post Title Goes Here</h2>
+        <p class="post-excerpt">
+          A short excerpt or abstract of the post. Two or three sentences that give the reader a reason to click.
+          Keep it conversational, keep it honest.
+        </p>
+        <div class="post-footer">
+          <span class="post-read-more">&gt; read more</span>
+        </div>
+      </article>
+
+      <article class="post-card" onclick="window.location='/blog/another-post/'">
+        <div class="post-meta-row">
+          <span class="post-tag">MISC</span>
+          <span class="post-date">2025-08-03</span>
+          <span class="post-read">~8 min read</span>
+        </div>
+        <h2 class="post-title">Another Post Title Goes Here</h2>
+        <p class="post-excerpt">
+          A short excerpt or abstract of the post. Two or three sentences that give the reader a reason to click.
+          Keep it conversational, keep it honest.
+        </p>
+        <div class="post-footer">
+          <span class="post-read-more">&gt; read more</span>
+        </div>
+      </article>
+
+      <article class="post-card" onclick="window.location='/blog/third-post/'">
+        <div class="post-meta-row">
+          <span class="post-tag">LIFE</span>
+          <span class="post-date">2025-04-21</span>
+          <span class="post-read">~3 min read</span>
+        </div>
+        <h2 class="post-title">Third Post Title Goes Here</h2>
+        <p class="post-excerpt">
+          A short excerpt or abstract of the post. Two or three sentences that give the reader a reason to click.
+          Keep it conversational, keep it honest.
+        </p>
+        <div class="post-footer">
+          <span class="post-read-more">&gt; read more</span>
+        </div>
+      </article>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="blog-sidebar">
+      <div class="sidebar-block">
+        <div class="sidebar-title">&gt;&gt; TOPICS</div>
+        <ul class="sidebar-tags">
+          <li><a href="#">PHYSICS</a></li>
+          <li><a href="#">CODE</a></li>
+          <li><a href="#">LIFE</a></li>
+          <li><a href="#">MUSIC</a></li>
+          <li><a href="#">BOOKS</a></li>
+          <li><a href="#">MISC</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-title">&gt;&gt; RECENT</div>
+        <ul class="sidebar-recent">
+          <li><a href="#">Your Post Title Goes Here</a><span>2025-11</span></li>
+          <li><a href="#">Another Post Title</a><span>2025-08</span></li>
+          <li><a href="#">Third Post Title</a><span>2025-04</span></li>
+        </ul>
+      </div>
+      <div class="sidebar-block sidebar-quote">
+        <div class="sidebar-title">&gt;&gt; ON THE RECORD</div>
+        <p>"Writing is thinking on paper."</p>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<!--
+  ══════════════════════════════════════════════════════════
+  INDIVIDUAL POST TEMPLATE — use this for each post page.
+  Create a separate .njk file per post, e.g. /blog/my-post.njk
+  ══════════════════════════════════════════════════════════
+
+  ---
+  layout: layout.njk
+  title: Post Title | Blog
+  ---
+
+  <article class="blog-post-full">
+    <div class="post-full-meta">
+      <span class="post-tag">CATEGORY</span>
+      <span class="post-date">YYYY-MM-DD</span>
+      <span class="post-read">~X min read</span>
+    </div>
+    <h1 class="post-full-title">Post Title Here</h1>
+    <div class="post-full-body">
+      <p>Your content here...</p>
+    </div>
+    <a class="post-back" href="/blog/">&lt; back to all posts</a>
+  </article>
+-->
+
+<style>
+/* ── Blog Page ───────────────────────────────────────────────── */
+/*
+  Reading palette — warm amber-on-dark rather than hot pink.
+  Hot pink stays for UI chrome; body text uses soft amber/cream
+  so long reads don't burn the eyes.
+*/
+:root {
+  --blog-text:    #d4b896;   /* warm cream — main reading color  */
+  --blog-muted:  #8a7260;   /* muted warm — dates, meta         */
+  --blog-accent: #fbb34d;   /* amber — headings, hover          */
+  --blog-bright: #FF0088;   /* pink — tags, UI chrome only      */
+  --blog-bg:     #0d0020;
+  --blog-card:   #120025;
+  --blog-border: #2a0050;
+}
+
+.blog-page { padding: 0 0 3em; }
+
+.blog-header {
+  border-bottom: 1px solid var(--blog-border);
+  padding-bottom: 0.7em;
+  margin-bottom: 1.8em;
+}
+.blog-header-label {
+  color: var(--blog-muted);
+  font-size: 0.78em;
+  letter-spacing: 0.08em;
+}
+
+/* Layout */
+.blog-layout {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 2.5em;
+  align-items: start;
+}
+@media (max-width: 700px) {
+  .blog-layout { grid-template-columns: 1fr; }
+  .blog-sidebar { border-top: 1px solid var(--blog-border); padding-top: 1.5em; }
+}
+
+/* Post cards */
+.post-card {
+  border: 1px solid var(--blog-border);
+  background: var(--blog-card);
+  padding: 1.2em 1.4em;
+  margin-bottom: 1.4em;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.15s;
+}
+.post-card:hover {
+  border-color: var(--blog-accent);
+  transform: translateX(4px);
+}
+
+.post-meta-row {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  margin-bottom: 0.6em;
+  flex-wrap: wrap;
+}
+.post-tag {
+  font-size: 0.65em;
+  background: var(--blog-bright);
+  color: #0d0020;
+  padding: 0.1em 0.5em;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+}
+.post-date, .post-read {
+  font-size: 0.72em;
+  color: var(--blog-muted);
+  letter-spacing: 0.05em;
+}
+
+.post-title {
+  font-family: "Source Code Pro", monospace;
+  font-size: 1.1em;
+  font-weight: 700;
+  color: var(--blog-accent);
+  margin: 0 0 0.6em;
+  line-height: 1.4;
+}
+
+.post-excerpt {
+  font-size: 0.87em;
+  color: var(--blog-text);
+  line-height: 1.8;
+  margin: 0 0 0.9em;
+  /* Comfortable reading: not too wide */
+  max-width: 62ch;
+}
+
+.post-footer { display: flex; justify-content: flex-end; }
+.post-read-more {
+  font-size: 0.75em;
+  color: var(--blog-bright);
+  letter-spacing: 0.06em;
+  transition: color 0.15s;
+}
+.post-card:hover .post-read-more { color: var(--blog-accent); }
+
+/* Sidebar */
+.blog-sidebar { font-size: 0.82em; }
+.sidebar-block {
+  border: 1px solid var(--blog-border);
+  padding: 0.9em 1em;
+  margin-bottom: 1.2em;
+  background: var(--blog-card);
+}
+.sidebar-title {
+  color: var(--blog-bright);
+  font-size: 0.78em;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.8em;
+}
+.sidebar-tags {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+}
+.sidebar-tags li a {
+  font-size: 0.78em;
+  border: 1px solid var(--blog-border);
+  color: var(--blog-muted);
+  padding: 0.15em 0.5em;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.sidebar-tags li a:hover {
+  border-color: var(--blog-accent);
+  color: var(--blog-accent);
+}
+
+.sidebar-recent {
+  list-style: none;
+  margin: 0; padding: 0;
+}
+.sidebar-recent li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3em 0;
+  border-bottom: 1px solid var(--blog-border);
+  gap: 0.5em;
+}
+.sidebar-recent li:last-child { border-bottom: none; }
+.sidebar-recent a {
+  color: var(--blog-text);
+  text-decoration: none;
+  font-size: 0.82em;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.15s;
+}
+.sidebar-recent a:hover { color: var(--blog-accent); }
+.sidebar-recent span {
+  color: var(--blog-muted);
+  font-size: 0.75em;
+  flex-shrink: 0;
+}
+
+.sidebar-quote p {
+  color: var(--blog-muted);
+  font-style: italic;
+  font-size: 0.85em;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Full post body styles ─────────────────────────────────── */
+.blog-post-full {
+  max-width: 68ch;
+  margin: 0 auto;
+  padding-bottom: 3em;
+}
+.post-full-meta {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  margin-bottom: 0.8em;
+  flex-wrap: wrap;
+}
+.post-full-title {
+  font-family: "Source Code Pro", monospace;
+  font-size: 1.6em;
+  color: var(--blog-accent);
+  margin: 0 0 1.4em;
+  line-height: 1.3;
+  border-bottom: 1px solid var(--blog-border);
+  padding-bottom: 0.6em;
+}
+.post-full-body {
+  color: var(--blog-text);
+  font-size: 0.92em;
+  line-height: 1.9;
+}
+.post-full-body h2 {
+  color: var(--blog-accent);
+  font-size: 1.1em;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+  border-left: 3px solid var(--blog-bright);
+  padding-left: 0.6em;
+}
+.post-full-body h3 {
+  color: var(--blog-accent);
+  font-size: 0.95em;
+  margin-top: 1.5em;
+}
+.post-full-body p { margin-bottom: 1.2em; }
+.post-full-body a { color: var(--blog-bright); border-bottom: 1px solid var(--blog-bright)44; }
+.post-full-body a:hover { color: var(--blog-accent); border-color: var(--blog-accent); }
+.post-full-body code {
+  background: #1c013599;
+  color: #fbb34d;
+  padding: 0.1em 0.35em;
+  font-family: "Source Code Pro", monospace;
+  font-size: 0.88em;
+}
+.post-full-body blockquote {
+  border-left: 3px solid var(--blog-border);
+  margin: 1.5em 0;
+  padding: 0.5em 1.2em;
+  color: var(--blog-muted);
+  font-style: italic;
+}
+
+.post-back {
+  display: inline-block;
+  margin-top: 2.5em;
+  color: var(--blog-bright);
+  text-decoration: none;
+  font-size: 0.82em;
+  letter-spacing: 0.06em;
+}
+.post-back:hover { color: var(--blog-accent); }
+</style>
